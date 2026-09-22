@@ -12,7 +12,7 @@ e eles só podem ser chamados quando a thread finalizar.
 
 - A main deve mostrar ao final o resultado desses métodos aplicados às threads.
 
-- A main deve "startar" **t** threads, sendo **t** a quantidade de processadores
+- A main deve "startar" **t** threads, sendo **t** a quantidade de processadores.
 
 # Métodos
 
