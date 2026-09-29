@@ -14,16 +14,17 @@ e eles só podem ser chamados quando a thread finalizar.
 
 - A main deve "startar" **t** threads, sendo **t** a quantidade de processadores.
 
-# Métodos
+## Métodos
 
 - Gerar aleatórios entre **-n/2** e **n/2**:
 
-```java 
+```java
 double x = Math.random() * n - n/2;
 double y = Math.random() * n - n/2;
 ```
 
 - Saber se **(x,y)** está dentro do círculo:
+
 ```java
 if (x*x + y*y <= n/2)
 ```

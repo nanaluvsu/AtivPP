@@ -1,63 +1,41 @@
 import java.util.Vector;
+
 public class Numbergen extends Thread {
     
     private int n;
-    private static int nTotal;
-    private long duracao;
-
-    public long getDuracao() {
-        return duracao;
-    }
-
-    public void setDuracao(long duracao) {
-        this.duracao = duracao;
-    }
-
-    public int getN() {
-        return n;
-    }
-
-    public void setN(int n) {
-        this.n = n;
-    }
-
-    private Vector<Ponto> pontos = new Vector<>();
+    private int nTotal = 0;
+    private int qtdPontosCirculo = 0;
+    private long duracao; //duracao em Ms
+    private final Vector<Ponto> pontos = new Vector<>();
 
     public int getTotalPontosGerados() {
-
+        return nTotal;
     }
 
-   
     public int getQtdPontosDentroDoCirculoInscrito() {
-        int nPontosCirculo = 0;
-        for (int i = 0; i < pontos.size(); i++) {
-            Ponto ponto = pontos.get(i);
-            double x = ponto.getX();
-            double y = ponto.getY();
-            if (x*x + y*y <= n/2) {
-                nPontosCirculo++;
-            }
-        }
-        return nPontosCirculo;
-    }
-
-    private Ponto geraPonto(double x, double y) {
-        Ponto p = new Ponto(x, y);
-        pontos.add(p);
-        nTotal += pontos.size();
-        return p;
+        return qtdPontosCirculo;
     }
 
     public Numbergen(int n, long duracao) {
+        this.n = n;
+        this.duracao = duracao;
+    }
 
+    @Override 
+    public void run() {
         long inicio = System.nanoTime();
-        while (System.nanoTime() - inicio <= duracao) {
-            setN(n);
+        while (System.nanoTime() - inicio < duracao * 1_000_000) {
             double x = Math.random() * n - n/2;
             double y = Math.random() * n - n/2;
-            geraPonto(x, y);
+            nTotal++;
+            pontos.add(new Ponto(x, y));
+            
+            double raio = n / 2.0;
+            if (x * x + y * y <= raio * raio) {
+                qtdPontosCirculo++;
+            }
+            
         }
-        
-        
+
     }
 }
