@@ -22,4 +22,11 @@
     - Socket
     - m<sub>n</sub> Threads
 
+#### OBS:
+- Cliente não é chamado de Cliente, mas de "Programa com comportamento de Cliente". 
+- Mesmo se aplica ao Servidor, sendo chamado de "Programa com comportamento de Servidor".
 #### m<sub>i</sub> = Quantidade de processadores da maq<sub>i-1</sub>
+
+Exemplificando com a prova, cada thread Processadora era um Servidor, onde cada uma enviava a sua resposta. A thread Distribuidora, nesse caso, seria o Cliente, recebendo as respostas de cada servidor.
+
+## Revisão: Conexão entre máquinas via Socket
