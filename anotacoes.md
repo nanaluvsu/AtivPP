@@ -30,3 +30,10 @@
 Exemplificando com a prova, cada thread Processadora era um Servidor, onde cada uma enviava a sua resposta. A thread Distribuidora, nesse caso, seria o Cliente, recebendo as respostas de cada servidor.
 
 ## Revisão: Conexão entre máquinas via Socket
+
+Para divisão de dados, solicitar a cada servidor o número de processadores da máquina e dividir por esse.
+
+### Como o cliente sabe com quantas e quais máquinas se comunicar?
+- Precisa saber o IP da máquina.
+- Para isso, após rodar o programa, tenta conectar com as máquinas da rede. Por apenas x máquinas estarem rodando, apenas x máquinas irão responder, obtendo os endereços IP.
+- Pode também usar um arquivo de configuração com máquinas definidas.
