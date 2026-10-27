@@ -37,3 +37,7 @@ Para divisão de dados, solicitar a cada servidor o número de processadores da 
 - Precisa saber o IP da máquina.
 - Para isso, após rodar o programa, tenta conectar com as máquinas da rede. Por apenas x máquinas estarem rodando, apenas x máquinas irão responder, obtendo os endereços IP.
 - Pode também usar um arquivo de configuração com máquinas definidas.
+
+---
+
+Computador pronto para uso -> 20:05
