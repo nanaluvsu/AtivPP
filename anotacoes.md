@@ -41,3 +41,47 @@ Para divisão de dados, solicitar a cada servidor o número de processadores da 
 ---
 
 Computador pronto para uso -> 20:05
+
+## Revisão
+
+Sempre existirá um proativo e um reativo, e o reativo sempre será o Servidor, respondendo o Cliente, o proativo.
+
+Usa-se IP ou nome simbólico para identificar a máquina
+
+### Tratamento do args
+
+Utilizamos args para enviar parâmetros do Windows ao programa para a execução.
+
+*return 0 em C -> envia parâmetros do programa ao Windows.*
+
+```return 0 ``` em C equivale a ```System.exit(0)``` em Java
+
+
+```
+public static final String DEFAULT_PORT = "3000"
+if (args.length > 1) {
+    System.err.println("Uso esperado: java Servidor [Porta]\n")
+}
+String porta = Servidor.DEFAULT_PORT;
+if (args.length == 1) {
+    porta = args[0]
+}
+
+ArrayList<Parceiro> usuarios = new ArrayList<Parceiro>
+
+AceitadoraConexao aceitadoraDeConexao = null;
+
+try {
+    aceitadoraDeConexao = new AceitadoraConexao(porta,usuarios);
+    aceitadoraDeConexao.start();
+} catch (Exception ex) {
+    System.err.println(ex);
+    return
+}
+
+for (;;) {
+    System.out.println("Servidor ativo. Para desativar, use o comando: ");
+    #Algum comando
+}
+
+```
